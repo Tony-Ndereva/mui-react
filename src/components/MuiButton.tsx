@@ -1,6 +1,17 @@
-import { Button, Stack, IconButton, ButtonGroup } from "@mui/material";
+import {
+  Button,
+  Stack,
+  IconButton,
+  ButtonGroup,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import { FormatUnderlined ,FormatItalic} from "@mui/icons-material";
 import SendIcon from "@mui/icons-material/Send";
+import {useState } from 'react'
 function MuiButton() {
+  const [formats,setFormats] = useState<string[]>([])
   return (
     <Stack spacing={4}>
       <Stack spacing={2} direction="row">
@@ -58,11 +69,28 @@ function MuiButton() {
       </Stack>
 
       <Stack direction="row">
-        <ButtonGroup variant="outlined" orientation="horizontal" size='small' color="secondary">
+        <ButtonGroup
+          variant="outlined"
+          orientation="horizontal"
+          size="small"
+          color="secondary"
+        >
           <Button>Left</Button>
           <Button>Center</Button>
           <Button>Right</Button>
         </ButtonGroup>
+      </Stack>
+
+      <Stack direction='row'>
+
+
+<ToggleButtonGroup aria-label="text formatting">
+<ToggleButton value='bold'><FormatBoldIcon /></ToggleButton>
+<ToggleButton value='italic'><FormatItalic /></ToggleButton>
+<ToggleButton value='underlined'><FormatUnderlined /></ToggleButton>
+
+</ToggleButtonGroup>
+
       </Stack>
     </Stack>
   );
