@@ -6,7 +6,7 @@ import MuiTypography from "./components/MuiTypography";
 function App() {
   return (
     <>
-      <MuiTypography />
+      {/* <MuiTypography /> */}
       <MuiButton />
       <MuiTextField />
     </>
